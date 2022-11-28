@@ -1,7 +1,9 @@
+import{rollDice,knifeSlice} from "./audio.js"
 document.addEventListener("DOMContentLoaded", ()=>{
 
 
-//Global variables
+
+  //Global variables
 let rollspeed = 12;
 let angle = 0;
 let randomNumber = -1;
@@ -747,6 +749,7 @@ function roll(){
     enemyResult = generateRandomNumber();
     console.log("jugador: " + (playerResult+1));
     console.log("enemigo: " + (enemyResult+1));
+    rollDice();
 
     
     switch(enemyResult){
@@ -780,6 +783,7 @@ function roll(){
     }
 
     setTimeout(()=>{
+      rollDice();
 
         switch(playerResult){
         case 0: 
@@ -818,10 +822,12 @@ function roll(){
     if(playerResult > enemyResult){
         //win method, save it in localStorage
         setTimeout(()=>{
+          knifeSlice();
             dices__win.style.display = 'flex';
             rollButton.style.visibility = 'visible';
             //do visible CHOOSE PLAYER DIV
         },13500);
+       
         console.log("Player won 1vs1");
     }else if(playerResult < enemyResult){
         //loose method
