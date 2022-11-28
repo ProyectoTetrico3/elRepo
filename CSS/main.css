@@ -88,8 +88,9 @@ footer {
   #header__hamburger {
     display: flex;
     position: absolute;
-    background: url("/Assets/images/menu.svg");
+    background: url("/Assets/images/necktie.svg");
     border: none;
+    background-repeat: no-repeat;
     cursor: pointer;
     width: 30px;
     height: 30px;
